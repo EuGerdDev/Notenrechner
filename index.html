@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    Du hast <input id="points" type="number"> von <input id="maxpoints" type="number"> Punkten Erreicht. <br>
-    Du hast <span id="gradepoint"></span> Notenpunkte Erreicht. <br>
+    Der Schüler hat <input id="points" type="number"> P. von <input id="maxpoints" type="number"> Punkten Erreicht. <br>
+    <span id="gradepoint"></span> Notenpunkte<br>
     <button onclick="updateTable()">Ausrechnen</button> <br>
     <table id="table">
     <tr id="pointcontainer">
@@ -23,7 +23,11 @@
     <tr id="gradecontainer">
         
     </tr>
-    </table>
+    <tr id="gradeAmount">
+        
+    </tr>
+    </table> <br>
+    Durchschnitt der Lerngruppe: ∅ = <span id="averagegrade"></span> NP
     <script src="main.js"></script>
 </body>
 </html>
