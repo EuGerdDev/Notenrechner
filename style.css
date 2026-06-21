@@ -81,3 +81,66 @@ button:hover {
     font-size: 22px;
     font-weight: bold;
 }
+#abi {
+    width: 430px;
+    height: 35px;
+    position: absolute;
+    top: 2px;
+    left: 128px;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#msa {
+    width: 430px;
+    height: 35px;
+    position: absolute;
+    top: 2px;
+    left: 560px;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#bbr {
+    width: 214px;
+    height: 35px;
+    position: absolute;
+    top: 42px;
+    right: 216px;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#bügo {
+    width: 646px;
+    height: 35px;
+    position: absolute;
+    top: 42px;
+    left: 128px;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#ka {
+    width: 214px;
+    height: 35px;
+    position: absolute;
+    top: 2px;
+    right: 0px;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#schoolleavingqualification {
+    position: relative;
+    height: 80px;
+}
+* {
+    box-sizing: border-box;
+    
+}
