@@ -3,97 +3,157 @@ let gradepoints = [
         name: "15",
         percent: 0,
         grade: "1+",
-        haveGrade: false
+        haveGrade: false,
+        schoolleavingqualifications: [
+            {name: "Abitur", index: 0},
+            {name: "Berechtigung Übergang Gymnasiale Oberstufe", index: 3}
+        ]
     },
     {
         name: "14",
         percent: 0,
         grade: "1",
-        haveGrade: false
+        haveGrade: false,
+        schoolleavingqualifications: [
+            {name: "Abitur", index: 0},
+            {name: "Berechtigung Übergang Gymnasiale Oberstufe", index: 3}
+        ]
     },
     {
         name: "13",
         percent: 0,
         grade: "1-",
-        haveGrade: false
+        haveGrade: false,
+        schoolleavingqualifications: [
+            {name: "Abitur", index: 0},
+            {name: "Berechtigung Übergang Gymnasiale Oberstufe", index: 3}
+        ]
     },
     {
         name: "12",
         percent: 0,
         grade: "2+",
-        haveGrade: false
+        haveGrade: false,
+        schoolleavingqualifications: [
+            {name: "Abitur", index: 0},
+            {name: "Berechtigung Übergang Gymnasiale Oberstufe", index: 3}
+        ]
     },
     {
         name: "11",
         percent: 0,
         grade: "2",
-        haveGrade: false
+        haveGrade: false,
+        schoolleavingqualifications: [
+            {name: "Abitur", index: 0},
+            {name: "Berechtigung Übergang Gymnasiale Oberstufe", index: 3}
+        ]
     },
     {
         name: "10",
         percent: 0,
         grade: "2-",
-        haveGrade: false
+        haveGrade: false,
+        schoolleavingqualifications: [
+            {name: "Abitur", index: 0},
+            {name: "Berechtigung Übergang Gymnasiale Oberstufe", index: 3}
+        ]
     },
     {
         name: "9",
         percent: 0,
         grade: "3+",
-        haveGrade: false
+        haveGrade: false,
+        schoolleavingqualifications: [
+            {name: "MSA", index: 1},
+            {name: "Berechtigung Übergang Gymnasiale Oberstufe", index: 3}
+        ]
     },
     {
         name: "8",
         percent: 0,
         grade: "3",
-        haveGrade: false
+        haveGrade: false,
+        schoolleavingqualifications: [
+            {name: "MSA", index: 1},
+            {name: "Berechtigung Übergang Gymnasiale Oberstufe", index: 3}
+        ]
     },
     {
         name: "7",
         percent: 0,
         grade: "3-",
-        haveGrade: false
+        haveGrade: false,
+        schoolleavingqualifications: [
+            {name: "MSA", index: 1},
+            {name: "Berechtigung Übergang Gymnasiale Oberstufe", index: 3}
+        ]
     },
     {
         name: "6",
         percent: 0,
         grade: "4+",
-        haveGrade: false
+        haveGrade: false,
+        schoolleavingqualifications: [
+            {name: "MSA", index: 1},
+        ]
     },
     {
         name: "5",
         percent: 0,
         grade: "4",
-        haveGrade: false
+        haveGrade: false,
+        schoolleavingqualifications: [
+            {name: "BBR/eBBR", index: 2},
+            {name: "MSA", index: 1}
+        ]
     },
     {
         name: "4",
         percent: 0,
         grade: "4-",
-        haveGrade: false
+        haveGrade: false,
+        schoolleavingqualifications: [
+            {name: "BBR/eBBR", index: 2},
+            {name: "MSA", index: 1}
+        ]
     },
     {
         name: "3",
         percent: 0,
         grade: "5+",
-        haveGrade: false
+        haveGrade: false,
+        schoolleavingqualifications: [
+            {name: "BBR/eBBR", index: 2},
+            {name: "MSA", index: 1}
+        ]
     },
     {
         name: "2",
         percent: 0,
         grade: "5",
-        haveGrade: false
+        haveGrade: false,
+        schoolleavingqualifications: [
+            {name: "Kein Abschluss", index: 4}
+        ]
     },
     {
         name: "1",
         percent: 0,
         grade: "5-",
-        haveGrade: false
+        haveGrade: false,
+        schoolleavingqualifications: [
+            {name: "Kein Abschluss", index: 4}
+        ]
     },
     {
         name: "0",
         percent: 0,
         grade: "6",
-        haveGrade: false
+        haveGrade: false,
+        schoolleavingqualifications: [
+            {name: "Kein Abschluss", index: 4}
+        ]
     },
     
 ]
@@ -179,6 +239,33 @@ let percentages = [
         points: 0
     },
 ]
+let schoolleavingqualifications = [
+    {
+        name: "Abitur",
+        id: "abi",
+        width: 440
+    },
+    {
+        name: "MSA",
+        id: "msa",
+        width: 440
+    },
+    {
+        name: "BBR/eBBR",
+        id: "bbr",
+        width: 218
+    },
+    {
+        name: "Berechtigung Übergang Gymnasiale Oberstufe",
+        id: "bügo",
+        width: 670
+    },
+    {
+        name: "Kein Abschluss",
+        id: "ka",
+        width: 218
+    },
+]
 let resultGradePoints;
 let percent;
 let grade;
@@ -214,30 +301,41 @@ function updateTable() {
         let displaygrade = Math.round(grade);
         percentages[index].points = displaygrade;
         gradepoints[index].haveGrade = false;
+        if(amount == 1){
+            gradeAmount.innerHTML += `<td class="number"><input type="number" id="${index + 1}"></td>`;
+        }
     }
     for (let index = 0; index < gradepoints.length; index++) {
+        for (let iii = 0; iii < schoolleavingqualifications.length; iii++) {
+            document.getElementById(schoolleavingqualifications[iii].id).style.backgroundColor = "";
+        }
+        
         if(points >= percentages[index].points){
             resultGradePoints = gradepoints[index].name;
             gradepoints[index].haveGrade = true;
+            document.getElementById(index + 1).value =
+            Number(document.getElementById(index + 1).value) + 1;
+            
+            for (let ii = 0; ii < gradepoints[index].schoolleavingqualifications.length; ii++) {
+                document.getElementById(schoolleavingqualifications[gradepoints[index].schoolleavingqualifications[ii].index].id).style.backgroundColor = "rgb(62, 206, 26)";
+            }
             break;
         }
     }
     for (let index = 0; index < gradepoints.length; index++) {
         let percantborder = document.getElementById("percantborder" + (index + 1))
         if(gradepoints[index].haveGrade){
-            pointcontainer.innerHTML += `<td style="border: 5px  rgb(89, 255, 47) inset;" class="number">${percentages[index].points}</td>`;
-            gradepointcontainer.innerHTML += `<td style="border: 5px  rgb(89, 255, 47) inset;" class="number">${gradepoints[index].name}</td>`;
-            gradecontainer.innerHTML += `<td style="border: 5px  rgb(89, 255, 47) inset;" class="number">${gradepoints[index].grade}</td>`;
-            percantborder.style.border = "5px rgb(89, 255, 47) inset";
+            pointcontainer.innerHTML += `<td style="background-color:  rgb(62, 206, 26);" class="number">${percentages[index].points}</td>`;
+            gradepointcontainer.innerHTML += `<td style="background-color: rgb(62, 206, 26);" class="number">${gradepoints[index].name}</td>`;
+            gradecontainer.innerHTML += `<td style="background-color: rgb(62, 206, 26);" class="number">${gradepoints[index].grade}</td>`;
+            percantborder.style.backgroundColor = "rgb(62, 206, 26)";
         }else{
             pointcontainer.innerHTML += `<td class="number">${percentages[index].points}</td>`;
             gradepointcontainer.innerHTML += `<td class="number">${gradepoints[index].name}</td>`;
             gradecontainer.innerHTML += `<td class="number">${gradepoints[index].grade}</td>`;
-            percantborder.style.border = "none";
+            percantborder.style.backgroundColor = "";
         }
-        if(amount == 1){
-            gradeAmount.innerHTML += `<td class="number"><input type="number" id="${index + 1}"></td>`;
-        }
+        
         let gradeInput = Number(document.getElementById(index + 1).value);
         if(!isNaN(gradeInput) && gradeInput > 0){
             grades += gradeInput;
