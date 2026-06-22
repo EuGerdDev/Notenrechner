@@ -313,6 +313,7 @@ function updateTable() {
         if(points >= percentages[index].points){
             resultGradePoints = gradepoints[index].name;
             gradepoints[index].haveGrade = true;
+            if(amount > 1)
             document.getElementById(index + 1).value =
             Number(document.getElementById(index + 1).value) + 1;
             
