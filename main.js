@@ -345,7 +345,12 @@ function updateTable() {
         
         
     }
-    document.getElementById("gradepoint").textContent = resultGradePoints;
+    if(resultGradePoints == 1){
+        document.getElementById("gradepoint").textContent = resultGradePoints + " Notenpunkt";
+    }else{
+        document.getElementById("gradepoint").textContent = resultGradePoints + " Notenpunkte";
+    }
+    
 
     if(!isNaN(totalgradepoints / grades)){
             averagegrade = totalgradepoints / grades;
