@@ -7,36 +7,42 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    Der Schüler hat <input id="points" type="number"> P. von <input id="maxpoints" type="number"> Punkten Erreicht. <br>
-    <span id="gradepoint"></span><br>
+    <div id="content">
+        Der Schüler hat <input id="points" type="number"> P. von <input id="maxpoints" type="number"> Punkten Erreicht. <br>
+    <span id="gradepoint"></span> <span id="gradepointtext"></span>,  <span id="gradetext"></span> <span id="grade"></span><br>
+    <span id="calculations"> </span> Noten-Berechnungen<br> 
+    
     <button onclick="updateTable()">Ausrechnen</button> <br>
     <table id="table">
     <tr id="pointcontainer">
         <td></td>
     </tr>
-    <tr id="percantcontainer">
+    <tr id="percentcontainer">
         <td class="text">Prozent</td>
-<td id="percantborder1" class="number"><input id="percant1"  type="number" value="98"></td>
-<td id="percantborder2"  class="number"><input id="percant2"  type="number" value="94"></td>
-<td id="percantborder3"  class="number"><input id="percant3"  type="number" value="90"></td>
-<td id="percantborder4"  class="number"><input id="percant4"  type="number" value="85"></td>
-<td id="percantborder5"  class="number"><input id="percant5"  type="number" value="80"></td>
-<td id="percantborder6"  class="number"><input id="percant6"  type="number" value="75"></td>
-<td id="percantborder7"  class="number"><input id="percant7"  type="number" value="70"></td>
-<td id="percantborder8"  class="number"><input id="percant8"  type="number" value="65"></td>
-<td id="percantborder9"  class="number"><input id="percant9"  type="number" value="60"></td>
-<td id="percantborder10"  class="number"><input id="percant10"  type="number" value="55"></td>
-<td id="percantborder11"  class="number"><input id="percant11"  type="number" value="50"></td>
-<td id="percantborder12"  class="number"><input id="percant12"  type="number" value="45"></td>
-<td id="percantborder13"  class="number"><input id="percant13"  type="number" value="35"></td>
-<td id="percantborder14"  class="number"><input id="percant14"  type="number" value="25"></td>
-<td id="percantborder15"  class="number"><input id="percant15"  type="number" value="15"></td>
-<td id="percantborder16"  class="number"><input id="percant16"  type="number" value="0"></td>
+<td id="percentborder1" class="number"><input id="percent1"  type="number" value="98"></td>
+<td id="percentborder2"  class="number"><input id="percent2"  type="number" value="94"></td>
+<td id="percentborder3"  class="number"><input id="percent3"  type="number" value="90"></td>
+<td id="percentborder4"  class="number"><input id="percent4"  type="number" value="85"></td>
+<td id="percentborder5"  class="number"><input id="percent5"  type="number" value="80"></td>
+<td id="percentborder6"  class="number"><input id="percent6"  type="number" value="75"></td>
+<td id="percentborder7"  class="number"><input id="percent7"  type="number" value="70"></td>
+<td id="percentborder8"  class="number"><input id="percent8"  type="number" value="65"></td>
+<td id="percentborder9"  class="number"><input id="percent9"  type="number" value="60"></td>
+<td id="percentborder10"  class="number"><input id="percent10"  type="number" value="55"></td>
+<td id="percentborder11"  class="number"><input id="percent11"  type="number" value="50"></td>
+<td id="percentborder12"  class="number"><input id="percent12"  type="number" value="45"></td>
+<td id="percentborder13"  class="number"><input id="percent13"  type="number" value="35"></td>
+<td id="percentborder14"  class="number"><input id="percent14"  type="number" value="25"></td>
+<td id="percentborder15"  class="number"><input id="percent15"  type="number" value="15"></td>
+<td id="percentborder16"  class="number"><input id="percent16"  type="number" value="0"></td>
     </tr>
     <tr id="gradepointcontainer">
         
     </tr>
     <tr id="gradecontainer">
+        
+    </tr>
+    <tr id="ergradecontainer">
         
     </tr>
     <tr id="gradeAmount">
@@ -47,6 +53,9 @@
     </tr>
     </table> <br>
     Durchschnitt der Lerngruppe: ∅ = <span id="averagegrade"></span> NP
+    </div>
+    <div><span></span></div>
     <script src="main.js"></script>
 </body>
+</html>
 </html>
