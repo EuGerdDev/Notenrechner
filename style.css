@@ -3,6 +3,12 @@ body {
     background-color: #f4f6f8;
     padding: 20px;
     font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 650px;
+    margin: 0;
+    padding: 0;
 }
 
 /* Tabelle */
@@ -24,7 +30,7 @@ td {
     height: 40px;
     background-color: white;
     text-align: center;
-    
+    padding: 3px;
     font-size: 16px;
 }
 
@@ -77,7 +83,9 @@ button:hover {
 
 /* Ergebnis */
 #gradepoint,
-#averagegrade {
+#averagegrade,
+#grade
+ {
     font-size: 22px;
     font-weight: bold;
 }
@@ -86,18 +94,18 @@ button:hover {
     height: 35px;
     position: absolute;
     top: 2px;
-    left: 128px;
+    left: 131px;
     font-size: 25px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 #msa {
-    width: 430px;
+    width: 431px;
     height: 35px;
     position: absolute;
     top: 2px;
-    left: 560px;
+    left: 563px;
     font-size: 25px;
     display: flex;
     justify-content: center;
@@ -119,7 +127,7 @@ button:hover {
     height: 35px;
     position: absolute;
     top: 42px;
-    left: 128px;
+    left: 131px;
     font-size: 25px;
     display: flex;
     justify-content: center;
@@ -143,4 +151,19 @@ button:hover {
 * {
     box-sizing: border-box;
     
+}
+#hallo {
+    background-color: rgb(0, 138, 0);
+}
+#calculationcontainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(130px, max-content));
+    gap: 10px;
+    width: 100%;
+}
+#calculationcontainer > div, 
+#calculationcontainer > table {
+    transform: scale(0.01);       /* Macht die Elemente auf 80% ihrer Originalgröße kleiner */
+    transform-origin: top left;  /* Verhindert, dass durch das Verkleinern Freiraum entsteht */
+    width: max-content;          /* Hält das Element kompakt */
 }
